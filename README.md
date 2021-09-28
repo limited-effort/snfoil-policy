@@ -22,7 +22,7 @@ gem 'snfoil-policy'
 SnFoil Policies are meant to be used just like Pundit policies except you can build the actions using a helper and some of the setup work has been done for you.
 
 The entity being authorizated (usually a User) is accessible via the `entity` instance variable.
-And record the entity is trying to work with is accessible as the `record` instance variable.
+And the record the entity is trying to work with is accessible as the `record` instance variable.
 
 Use `permission` to start setting up some checks.
 
@@ -96,7 +96,7 @@ permission :create?, User do
 end
 
 permission :create?, UltimateAccessToken do
-  entity.expires_at < Time.current
+  entity.expires_at > Time.current
 end
 ```
 
@@ -104,7 +104,7 @@ And if for some reason you want to have type specific policies and a default, yo
 
 ```ruby
 permission :create?, UltimateAccessToken do
-  entity.expires_at < Time.current
+  entity.expires_at > Time.current
 end
 
 permission :create? do
@@ -122,7 +122,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/snfoil-policy. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/limited-effort/snfoil-policy/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/limited-effort/snfoil-policy. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/limited-effort/snfoil-policy/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
