@@ -3,6 +3,11 @@
 require 'active_support/concern'
 
 module SnFoil
+  # ActiveSupport::Concern for adding SnFoil Policy functionality to policy file
+  #
+  # @author Matthew Howes
+  #
+  # @since 0.1.0
   module Policy
     class Error < RuntimeError; end
 
@@ -35,6 +40,11 @@ module SnFoil
       @options = options
     end
 
+    # Default Scope class for associated Policies.
+    #
+    # @author Matthew Howes
+    #
+    # @since 0.1.0
     class Scope
       attr_reader :scope, :entity
 
