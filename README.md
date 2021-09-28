@@ -113,6 +113,10 @@ end
 
 ```
 
+### Scope
+
+There is nothing special about SnFoil Policy Scopes.  They are just defined to make life a little easier. Go ahead an check out how to use Scopes in [Pundit](https://github.com/varvet/pundit#scopes), we highly recommend them.
+
 
 ## Development
 
@@ -126,7 +130,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/limite
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [Apache 2 License](https://opensource.org/licenses/Apache-2.0).
 
 ## Code of Conduct
 
