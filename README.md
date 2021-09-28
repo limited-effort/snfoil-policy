@@ -1,6 +1,6 @@
 # Snfoil::Policy
 
-![build](https://github.com/limited-effort/snfoil-policy/actions/workflows/main.yml/badge.svg)
+![build](https://github.com/limited-effort/snfoil-policy/actions/workflows/main.yml/badge.svg) <a href="https://codeclimate.com/github/limited-effort/snfoil-policy/maintainability"><img src="https://api.codeclimate.com/v1/badges/81c3abdb068a2305d4ce/maintainability" /></a>
 
 SnFoil Policies are an easy and intuitive way to built [Pundit](https://github.com/varvet/pundit) style authorization files with a little extra base functionality added in.
 
@@ -14,14 +14,6 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'snfoil-policy'
 ```
-
-And then execute:
-
-  $ bundle install
-
-Or install it yourself as:
-
-  $ gem install snfoil-policy
 
 ## Usage
 
