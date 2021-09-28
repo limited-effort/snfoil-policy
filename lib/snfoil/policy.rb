@@ -13,7 +13,7 @@ module SnFoil
         @i_permissions ||= {}
       end
 
-      def permission(authorization_type, entity_class = nil, method = nil, &block)
+      def permission(authorization_type, entity_class = nil, with: nil, &block)
         @i_permissions ||= {}
         @i_permissions[authorization_type] ||= {}
         if @i_permissions[authorization_type][entity_class]
@@ -21,7 +21,7 @@ module SnFoil
                 "permission #{entity_class} #{authorization_type} already defined for #{name}"
         end
 
-        @i_permissions[authorization_type][entity_class] = build_permission_exec(method, block)
+        @i_permissions[authorization_type][entity_class] = build_permission_exec(with, block)
         define_permission_method(authorization_type)
       end
     end

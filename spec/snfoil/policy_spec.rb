@@ -74,7 +74,7 @@ class TestPolicy
     true
   end
 
-  permission :method?, User, :test_method
+  permission :method?, User, with: :test_method
 
   attr_accessor :canary
 
