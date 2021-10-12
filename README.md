@@ -1,6 +1,6 @@
 # Snfoil::Policy
 
-![build](https://github.com/limited-effort/snfoil-policy/actions/workflows/main.yml/badge.svg) <a href="https://codeclimate.com/github/limited-effort/snfoil-policy/maintainability"><img src="https://api.codeclimate.com/v1/badges/81c3abdb068a2305d4ce/maintainability" /></a>
+![build](https://github.com/limited-effort/snfoil-policy/actions/workflows/main.yml/badge.svg) [![maintainability](https://api.codeclimate.com/v1/badges/81c3abdb068a2305d4ce/maintainability)](https://codeclimate.com/github/limited-effort/snfoil-policy/maintainability)
 
 SnFoil Policies are an easy and intuitive way to built [Pundit](https://github.com/varvet/pundit) style authorization files with a little extra base functionality added in.
 
