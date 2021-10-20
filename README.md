@@ -2,8 +2,7 @@
 
 ![build](https://github.com/limited-effort/snfoil-policy/actions/workflows/main.yml/badge.svg) [![maintainability](https://api.codeclimate.com/v1/badges/81c3abdb068a2305d4ce/maintainability)](https://codeclimate.com/github/limited-effort/snfoil-policy/maintainability)
 
-SnFoil Policies are an easy and intuitive way to built [Pundit](https://github.com/varvet/pundit) style authorization files with a little extra base functionality added in.
-
+SnFoil Policies are an easy and intuitive way to build [Pundit](https://github.com/varvet/pundit) style authorization files with a little extra base functionality added in.
 
 While it isn't required you use [Pundit](https://github.com/varvet/pundit) with it, we highly recommend it.
 
@@ -21,7 +20,7 @@ gem 'snfoil-policy'
 
 SnFoil Policies are meant to be used just like Pundit policies except you can build the actions using a helper and some of the setup work has been done for you.
 
-The entity being authorizated (usually a User) is accessible via the `entity` instance variable.
+The entity being authorized (usually a User) is accessible via the `entity` instance variable.
 And the record the entity is trying to work with is accessible as the `record` instance variable.
 
 Use `permission` to start setting up some checks.
@@ -88,7 +87,7 @@ end
 permission :update?, with: :create?
 ```
 
-For more complex authorization mechanisms where more than one type of entity can operate against a record you can supply the type of the entity to check against.
+For more complex authorization mechanisms where more than one type of entity can operate against a record, you can supply the type of entity to check against.
 
 ```ruby
 permission :create?, User do
@@ -115,7 +114,7 @@ end
 
 ### Scope
 
-There is nothing special about SnFoil Policy Scopes.  They are just defined to make life a little easier. Go ahead an check out how to use Scopes in [Pundit](https://github.com/varvet/pundit#scopes), we highly recommend them.
+There is nothing special about SnFoil Policy Scopes.  They are just defined to make life a little easier. Check out how to use Scopes in [Pundit](https://github.com/varvet/pundit#scopes), we highly recommend them.
 
 
 ## Development
@@ -134,4 +133,4 @@ The gem is available as open source under the terms of the [Apache 2 License](ht
 
 ## Code of Conduct
 
-Everyone interacting in the Snfoil::Policy project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/limited-effort/snfoil-policy/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Snfoil::Policy project's codebases, issue trackers, chat rooms, and mailing lists is expected to follow the [code of conduct](https://github.com/limited-effort/snfoil-policy/blob/main/CODE_OF_CONDUCT.md).
