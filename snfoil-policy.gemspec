@@ -5,8 +5,8 @@ require_relative 'lib/snfoil/policy/version'
 Gem::Specification.new do |spec|
   spec.name          = 'snfoil-policy'
   spec.version       = SnFoil::Policy::VERSION
-  spec.authors       = ['Matthew Howes']
-  spec.email         = ['howeszy@gmail.com']
+  spec.authors       = ['Matthew Howes', 'Cliff Campbell']
+  spec.email         = ['howeszy@gmail.com', 'cliffcampbell@hey.com']
 
   spec.summary       = 'Pundit Style Permissions Builder'
   spec.description   = 'A set of helper functions to build permission files inspired by Pundit.'
