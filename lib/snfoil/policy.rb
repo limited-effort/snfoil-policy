@@ -28,20 +28,28 @@ module SnFoil
     extend ActiveSupport::Concern
 
     class_methods do
-      def i_permissions
-        @i_permissions ||= {}
+      def snfoil_permissions
+        @snfoil_permissions ||= {}
       end
 
       def permission(authorization_type, entity_class = nil, with: nil, &block)
-        @i_permissions ||= {}
-        @i_permissions[authorization_type] ||= {}
-        if @i_permissions[authorization_type][entity_class]
+        @snfoil_permissions ||= {}
+        @snfoil_permissions[authorization_type] ||= {}
+        if @snfoil_permissions[authorization_type][entity_class]
           raise SnFoil::Policy::Error,
                 "permission #{entity_class} #{authorization_type} already defined for #{name}"
         end
 
-        @i_permissions[authorization_type][entity_class] = build_permission_exec(with, block)
+        @snfoil_permissions[authorization_type][entity_class] = build_permission_exec(with, block)
         define_permission_method(authorization_type)
+      end
+
+      def inherited(subclass)
+        super
+
+        instance_variables.grep(/@snfoil_.+/).each do |i|
+          subclass.instance_variable_set(i, instance_variable_get(i).dup)
+        end
       end
     end
 
@@ -83,7 +91,7 @@ module SnFoil
 
       def define_permission_method(authorization_type)
         define_method authorization_type do
-          self.class.i_permissions[authorization_type].each do |klass, exec|
+          self.class.snfoil_permissions[authorization_type].each do |klass, exec|
             return instance_eval(&exec) if klass.nil? || entity.is_a?(klass)
           end
 
