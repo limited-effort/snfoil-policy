@@ -53,6 +53,17 @@ RSpec.describe SnFoil::Policy do
       end
     end
   end
+
+  describe 'inheritance' do
+    it 'assigns instance variables to subclass' do
+      expect(InheritedTestPolicy.instance_variables).to include(:@snfoil_permissions)
+      expect(InheritedTestPolicy.instance_variable_get(:@snfoil_permissions).keys).to include(:block?)
+    end
+
+    it 'assigns methods the subclass' do
+      expect(InheritedTestPolicy.new(entity, record).respond_to?(:block?)).to be true
+    end
+  end
 end
 
 class User; end
@@ -88,3 +99,5 @@ class TestPolicy
     canary.sing(message)
   end
 end
+
+class InheritedTestPolicy < TestPolicy; end
