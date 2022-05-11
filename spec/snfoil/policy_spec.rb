@@ -21,12 +21,12 @@ RSpec.describe SnFoil::Policy do
     end
 
     it 'allows for block definitions and calls' do
-      expect(policy.block?).to eq true
+      expect(policy.block?).to be true
       expect(canary).to have_received(:sing).with('block')
     end
 
     it 'allows for method definitions and calls' do
-      expect(policy.method?).to eq true
+      expect(policy.method?).to be true
       expect(canary).to have_received(:sing).with('method')
     end
 
