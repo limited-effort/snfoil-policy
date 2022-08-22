@@ -66,7 +66,7 @@ RSpec.describe SnFoil::Policy do
   end
 
   describe 'Policy::Scope' do
-    let(:scope_class) { InheritedTestPolicy::Scope.new(entity, record) } 
+    let(:scope_class) { InheritedTestPolicy::Scope.new(entity, record) }
 
     describe '#new' do
       it 'assigns entity to @entity' do
