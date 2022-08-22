@@ -69,7 +69,7 @@ module SnFoil
     class Scope
       attr_reader :scope, :entity
 
-      def initialize(scope, entity)
+      def initialize(entity, scope)
         @entity = entity
         @scope = scope
       end
