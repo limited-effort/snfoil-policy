@@ -42,13 +42,13 @@ module SnFoil
       def inherited(subclass)
         super
 
-        permissions = instance_variable_get(:'@snfoil_permissions') || {}
+        permissions = instance_variable_get(:@snfoil_permissions) || {}
         inherited_permissions = {}
         permissions.each_key do |action|
           inherited_permissions[action] = permissions[action].dup
         end
 
-        subclass.instance_variable_set(:'@snfoil_permissions', inherited_permissions)
+        subclass.instance_variable_set(:@snfoil_permissions, inherited_permissions)
       end
     end
 
@@ -69,7 +69,7 @@ module SnFoil
     class Scope
       attr_reader :scope, :entity
 
-      def initialize(scope, entity = nil)
+      def initialize(scope, entity)
         @entity = entity
         @scope = scope
       end
