@@ -64,6 +64,26 @@ RSpec.describe SnFoil::Policy do
       expect(InheritedTestPolicy.new(entity, record).respond_to?(:block?)).to be true
     end
   end
+
+  describe 'Policy::Scope' do
+    let(:scope_class) { InheritedTestPolicy::Scope.new(entity, record) } 
+
+    describe '#new' do
+      it 'assigns entity to @entity' do
+        expect(scope_class.entity).to eq entity
+      end
+
+      it 'assigns scope to @scope' do
+        expect(scope_class.scope).to eq record
+      end
+    end
+
+    describe '#resolve' do
+      it 'returns the scope' do
+        expect(scope_class.resolve).to eq record
+      end
+    end
+  end
 end
 
 class User; end
