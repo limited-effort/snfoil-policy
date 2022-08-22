@@ -42,9 +42,13 @@ module SnFoil
       def inherited(subclass)
         super
 
-        instance_variables.grep(/@snfoil_.+/).each do |i|
-          subclass.instance_variable_set(i, instance_variable_get(i).dup)
+        permissions = instance_variable_get(:'@snfoil_permissions') || {}
+        inherited_permissions = {}
+        permissions.each_key do |action|
+          inherited_permissions[action] = permissions[action].dup
         end
+
+        subclass.instance_variable_set(:'@snfoil_permissions', inherited_permissions)
       end
     end
 
