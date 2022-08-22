@@ -35,11 +35,6 @@ module SnFoil
       def permission(authorization_type, entity_class = nil, with: nil, &block)
         @snfoil_permissions ||= {}
         @snfoil_permissions[authorization_type] ||= {}
-        if @snfoil_permissions[authorization_type][entity_class]
-          raise SnFoil::Policy::Error,
-                "permission #{entity_class} #{authorization_type} already defined for #{name}"
-        end
-
         @snfoil_permissions[authorization_type][entity_class] = build_permission_exec(with, block)
         define_permission_method(authorization_type)
       end
@@ -56,7 +51,7 @@ module SnFoil
     attr_reader :record, :entity
     attr_accessor :options
 
-    def initialize(entity, record, options = {})
+    def initialize(entity, record, **options)
       @record = record
       @entity = entity
       @options = options
