@@ -7,8 +7,8 @@ gemspec
 
 group :development, :test do
   gem 'bundler-audit', '~> 0.9.0'
-  gem 'fasterer', '~> 0.11.0'
   gem 'debug', '~> 1.10'
+  gem 'fasterer', '~> 0.11.0'
   gem 'rake', '~> 13.0'
   gem 'rspec', '~> 3.10'
   gem 'rubocop', '~> 1.75'
