@@ -3,8 +3,8 @@
 {
   "name": "snfoil-policy",
   "dockerComposeFile": "../docker-compose.yaml",
-  "service": "app",
-  "workspaceFolder": "/app",
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
   "remoteUser": "root",
 
   // Features to add to the dev container. More info: https://containers.dev/features.

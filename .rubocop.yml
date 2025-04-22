@@ -1,11 +1,11 @@
-require:
+plugins:
   - rubocop-performance
   - rubocop-rspec
 
 AllCops:
   NewCops: enable
   SuggestExtensions: false
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.0
 
 # ================ LAYOUT ==============
 Layout/LineLength:
@@ -27,7 +27,7 @@ Metrics/BlockLength:
     - snfoil-policy.gemspec
 
 # ================ RSPEC ================
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
   Enabled: false
 
 RSpec/MultipleExpectations:
