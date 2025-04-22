@@ -2,7 +2,6 @@ services:
   workspace:
     build:
       context: .
-      target: base
       dockerfile: Dockerfile
     command: sleep infinity
     volumes:
