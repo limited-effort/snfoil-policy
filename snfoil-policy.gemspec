@@ -6,13 +6,13 @@ Gem::Specification.new do |spec|
   spec.name          = 'snfoil-policy'
   spec.version       = SnFoil::Policy::VERSION
   spec.authors       = ['Matthew Howes', 'Cliff Campbell']
-  spec.email         = ['howeszy@gmail.com', 'cliffcampbell@hey.com']
+  spec.email         = ['matt.howes@limitedeffort.io', 'cliffcampbell@hey.com']
 
   spec.summary       = 'Pundit Style Permissions Builder'
   spec.description   = 'A set of helper functions to build permission files inspired by Pundit.'
   spec.homepage      = 'https://github.com/limited-effort/snfoil-policy'
   spec.license       = 'Apache-2.0'
-  spec.required_ruby_version = '>= 2.6'
+  spec.required_ruby_version = '>= 3.0'
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
