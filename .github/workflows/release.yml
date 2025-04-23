@@ -8,6 +8,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment: rubygems
     permissions:
       contents: write
     steps:
@@ -48,13 +49,13 @@ jobs:
           files: |
             *.gem
 
-      # - name: Push to RubyGems
-      #   env:
-      #     RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-      #   run: |
-      #     mkdir -p ~/.gem
-      #     echo "---" > ~/.gem/credentials
-      #     echo ":rubygems_api_key: ${RUBYGEMS_API_KEY}" >> ~/.gem/credentials
-      #     chmod 600 ~/.gem/credentials
-      #     gem push *.gem
-      #     rm -f ~/.gem/credentials
+      - name: Push to RubyGems
+        env:
+          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        run: |
+          mkdir -p ~/.gem
+          echo "---" > ~/.gem/credentials
+          echo ":rubygems_api_key: ${RUBYGEMS_API_KEY}" >> ~/.gem/credentials
+          chmod 600 ~/.gem/credentials
+          gem push *.gem
+          rm -f ~/.gem/credentials
