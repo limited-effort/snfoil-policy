@@ -109,7 +109,7 @@ class TestPolicy
 
   attr_accessor :canary
 
-  def test_method
+  def test_method # rubocop:disable Naming/PredicateMethod
     sing('method')
 
     true
